@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route, NavLink, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink, Link, Navigate } from 'react-router-dom';
 import DogDetails from './DogDetails';
 import DogList from './DogList';
 
@@ -7,6 +7,9 @@ function App({dogs}) {
   return (
     <Router>
       <nav>
+        <div>
+          <Link to="/">Home</Link>
+        </div>
       {dogs.map(dog => (
         <div key={dog.name}>
           <NavLink to={"/dogs/"+dog.name}>{dog.name}</NavLink>
@@ -15,8 +18,8 @@ function App({dogs}) {
       </nav>
       <Routes>
         <Route path="/dogs">
-          <Route index element={<DogList />} />
-          <Route path=":name" element={<DogDetails />} />
+          <Route index element={<DogList dogs={dogs} />} />
+          <Route path=":name" element={<DogDetails dogs={dogs} />} />
         </Route>
         <Route path="*" element={<Navigate to="/dogs" />} />
       </Routes>
