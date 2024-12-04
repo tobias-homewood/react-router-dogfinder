@@ -1,8 +1,21 @@
-import './App.css';
+import './App.scss';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import Dog from './Dog';
 
 function App({dogs}) {
   return (
-    <div>Good Luck!</div>
+    <Router>
+      <nav>
+      {dogs.map(dog => (
+        <div key={dog.name}>
+          <NavLink to={"/dogs/"+dog.name}>{dog.name}</NavLink>
+        </div>
+      ))}
+      </nav>
+      <Routes>
+        <Route path="/dogs/:name" element={<Dog />} />
+      </Routes>
+    </Router>
   );
 }
 
