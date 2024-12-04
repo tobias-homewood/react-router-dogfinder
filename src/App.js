@@ -1,6 +1,7 @@
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route, NavLink, Navigate } from 'react-router-dom';
-import Dog from './Dog';
+import DogDetails from './DogDetails';
+import DogList from './DogList';
 
 function App({dogs}) {
   return (
@@ -13,8 +14,8 @@ function App({dogs}) {
       ))}
       </nav>
       <Routes>
-        <Route path="/dogs" element={<h1>Choose a dog!</h1>} />
-        <Route path="/dogs/:name" element={<Dog />} />
+        <Route path="/dogs" element={<DogList />} />
+        <Route path="/dogs/:name" element={<DogDetails />} />
         <Route path="*" element={<Navigate to="/dogs" />} />
       </Routes>
     </Router>
