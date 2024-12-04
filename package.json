@@ -13,6 +13,7 @@
     "react-dom": "*",
     "react-router-dom": "*",
     "react-scripts": "*",
+    "sass": "^1.82.0",
     "web-vitals": "*"
   },
   "scripts": {
