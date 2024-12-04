@@ -14,8 +14,10 @@ function App({dogs}) {
       ))}
       </nav>
       <Routes>
-        <Route path="/dogs" element={<DogList />} />
-        <Route path="/dogs/:name" element={<DogDetails />} />
+        <Route path="/dogs">
+          <Route index element={<DogList />} />
+          <Route path=":name" element={<DogDetails />} />
+        </Route>
         <Route path="*" element={<Navigate to="/dogs" />} />
       </Routes>
     </Router>
