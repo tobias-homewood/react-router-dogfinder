@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import Dog from './Dog';
 
 function App({dogs}) {
@@ -13,7 +13,9 @@ function App({dogs}) {
       ))}
       </nav>
       <Routes>
+        <Route path="/dogs" element={<h1>Choose a dog!</h1>} />
         <Route path="/dogs/:name" element={<Dog />} />
+        <Route path="*" element={<Navigate to="/dogs" />} />
       </Routes>
     </Router>
   );
