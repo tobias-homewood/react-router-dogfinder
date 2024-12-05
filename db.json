@@ -1,34 +1,48 @@
 {
   "dogs": [
-      {
-        "name": "Whiskey",
-        "age": 5,
-        "src": "whiskey",
-        "facts": [
-          "Whiskey loves eating popcorn.",
-          "Whiskey is a terrible guard dog.",
-          "Whiskey wants to cuddle with you!"
-        ]
-      },
-      {
-        "name": "Duke",
-        "age": 3,
-        "src": "duke",
-        "facts": [
-          "Duke believes that ball is life.",
-          "Duke likes snow.",
-          "Duke enjoys pawing other dogs."
-        ]
-      },
-      {
-        "name": "Perry",
-        "age": 4,
-        "src": "perry",
-        "facts": [
-          "Perry loves all humans.",
-          "Perry demolishes all snacks.",
-          "Perry hates the rain."
-        ]
-      }
-    ]
+    {
+      "name": "Whiskey",
+      "age": 5,
+      "src": "/images/whiskey.jpg",
+      "facts": [
+        "Whiskey loves eating popcorn.",
+        "Whiskey is a terrible guard dog.",
+        "Whiskey wants to cuddle with you!"
+      ]
+    },
+    {
+      "name": "Duke",
+      "age": 3,
+      "src": "/images/duke.jpg",
+      "facts": [
+        "Duke believes that ball is life.",
+        "Duke likes snow.",
+        "Duke enjoys pawing other dogs."
+      ]
+    },
+    {
+      "name": "Perry",
+      "age": 4,
+      "src": "/images/perry.jpg",
+      "facts": [
+        "Perry loves all humans.",
+        "Perry demolishes all snacks.",
+        "Perry hates the rain."
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "name": "red",
+      "hex": "#FF0000"
+    },
+    {
+      "name": "green",
+      "hex": "#00FF00"
+    },
+    {
+      "name": "blue",
+      "hex": "#0000FF"
+    }
+  ]
 }
