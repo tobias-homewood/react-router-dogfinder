@@ -5,9 +5,9 @@ const DogList = ({dogs}) => {
     return (
         <div className="doglist">
             {dogs.map(dog => (
-                <div key={dog.name}>
+                <div className="card" key={dog.name}>
                     <h1>{dog.name}</h1>
-                    <img src={`/images/${dog.src}`} alt={dog.name} />
+                    <img src={dog.src} alt={dog.name} />
                 </div>
             ))}
         </div>
