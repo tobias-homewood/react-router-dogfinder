@@ -3,30 +3,25 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    NavLink,
-    Link,
     Navigate,
 } from "react-router-dom";
+import DogNavbar from "./DogNavbar";
 import DogDetails from "./DogDetails";
 import DogList from "./DogList";
 
 function App({ dogs }) {
     return (
         <Router>
-            <nav>
-                <div>
-                    <Link to="/">Home</Link>
-                </div>
-                {dogs.map((dog) => (
-                    <div key={dog.name}>
-                        <NavLink to={"/dogs/" + dog.name}>{dog.name}</NavLink>
-                    </div>
-                ))}
-            </nav>
             <Routes>
-                <Route path="/dogs">
+                <Route path="/dogs" element={<DogNavbar dogs={dogs} />}>
                     <Route index element={<DogList dogs={dogs} />} />
                     <Route path=":name" element={<DogDetails dogs={dogs} />} />
+                    <Route path="*" element={<Navigate to="/dogs" />} />
+                </Route>
+                <Route path="/colors" /*element={<ColorNavbar colors={colors} />}*/>
+                    <Route index element={<h1>A List of Colors</h1>} />
+                    <Route path=":color" element={<h1>Specific Color</h1>} />
+                    <Route path="*" element={<Navigate to="/colors" />} />
                 </Route>
                 <Route path="*" element={<Navigate to="/dogs" />} />
             </Routes>
