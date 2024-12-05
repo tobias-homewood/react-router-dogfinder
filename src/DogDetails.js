@@ -9,7 +9,7 @@ const DogDetails = ({ dogs }) => {
     return (
         <div className="dogdetails">
             <h1>{dog.name}</h1>
-            <img src={`/images/${dog.src}`} alt={dog.name} />
+            <img src={dog.src} alt={dog.name} />
             <h2>{dog.age} years old</h2>
             <ul>
                 {dog.facts.map((fact, i) => (
