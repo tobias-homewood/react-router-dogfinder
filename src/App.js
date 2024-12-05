@@ -10,6 +10,8 @@ import {
 import DogNavbar from "./DogNavbar";
 import DogDetails from "./DogDetails";
 import DogList from "./DogList";
+import ColorList from "./ColorList";
+import ColorDetails from "./ColorDetails.js";
 
 function App() {
     const [dogs, setDogs] = useState([]);
@@ -43,9 +45,9 @@ function App() {
                     <Route path=":name" element={<DogDetails dogs={dogs} />} />
                     <Route path="*" element={<Navigate to="/dogs" />} />
                 </Route>
-                <Route path="/colors" /*element={<ColorNavbar colors={colors} />}*/>
-                    <Route index element={<h1>A List of Colors</h1>} />
-                    <Route path=":color" element={<h1>Specific Color</h1>} />
+                <Route path="/colors">
+                    <Route index element={<ColorList colors={colors} add={addColor} />} />
+                    <Route path=":color" element={<ColorDetails colors={colors} />} />
                     <Route path="*" element={<Navigate to="/colors" />} />
                 </Route>
                 <Route path="*" element={<Navigate to="/dogs" />} />
