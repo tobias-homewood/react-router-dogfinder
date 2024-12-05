@@ -16,16 +16,20 @@ import ColorDetails from "./ColorDetails.js";
 function App() {
     const [dogs, setDogs] = useState([]);
     const [colors, setColors] = useState([]);
+    const [loadingDogs, setLoadingDogs] = useState(true);
+    const [loadingColors, setLoadingColors] = useState(true);
 
     useEffect(() => {
         const fetchDogs = async () => {
             const res = await axios.get("http://localhost:5001/dogs");
             setDogs(res.data);
+            setLoadingDogs(false);
         };
 
         const fetchColors = async () => {
             const res = await axios.get("http://localhost:5001/colors");
             setColors(res.data);
+            setLoadingColors(false);
         };
 
         fetchDogs();
@@ -36,6 +40,10 @@ function App() {
         const res = await axios.post("http://localhost:5001/colors", newColor);
         console.log(res.data);
     };
+
+    if (loadingDogs || loadingColors) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <Router>
