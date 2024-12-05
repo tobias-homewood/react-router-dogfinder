@@ -1,4 +1,6 @@
 import "./App.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import {
     BrowserRouter as Router,
     Routes,
@@ -9,7 +11,30 @@ import DogNavbar from "./DogNavbar";
 import DogDetails from "./DogDetails";
 import DogList from "./DogList";
 
-function App({ dogs }) {
+function App() {
+    const [dogs, setDogs] = useState([]);
+    const [colors, setColors] = useState([]);
+
+    useEffect(() => {
+        const fetchDogs = async () => {
+            const res = await axios.get("http://localhost:5001/dogs");
+            setDogs(res.data);
+        };
+
+        const fetchColors = async () => {
+            const res = await axios.get("http://localhost:5001/colors");
+            setColors(res.data);
+        };
+
+        fetchDogs();
+        fetchColors();
+    }, []);
+
+    const addColor = async (newColor) => {
+        const res = await axios.post("http://localhost:5001/colors", newColor);
+        console.log(res.data);
+    };
+
     return (
         <Router>
             <Routes>
@@ -30,48 +55,3 @@ function App({ dogs }) {
 }
 
 export default App;
-
-App.defaultProps = {
-    dogs: [
-        {
-            name: "Whiskey",
-            age: 5,
-            src: "whiskey.jpg",
-            facts: [
-                "Whiskey loves eating popcorn.",
-                "Whiskey is a terrible guard dog.",
-                "Whiskey wants to cuddle with you!",
-            ],
-        },
-        {
-            name: "Duke",
-            age: 3,
-            src: "duke.jpg",
-            facts: [
-                "Duke believes that ball is life.",
-                "Duke likes snow.",
-                "Duke enjoys pawing other dogs.",
-            ],
-        },
-        {
-            name: "Perry",
-            age: 4,
-            src: "perry.jpg",
-            facts: [
-                "Perry loves all humans.",
-                "Perry demolishes all snacks.",
-                "Perry hates the rain.",
-            ],
-        },
-        {
-            name: "Tubby",
-            age: 4,
-            src: "tubby.jpg",
-            facts: [
-                "Tubby is really stupid.",
-                "Tubby does not like walks.",
-                "Angelina used to hate Tubby, but claims not to anymore.",
-            ],
-        },
-    ],
-};
