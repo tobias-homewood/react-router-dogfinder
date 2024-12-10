@@ -58,7 +58,7 @@ function App() {
                     <Route path=":color" element={<ColorDetails colors={colors} />} />
                     <Route path="*" element={<Navigate to="/colors" />} />
                 </Route>
-                <Route path="*" element={<Navigate to="/dogs" />} />
+                <Route path="*" element={<Navigate to="/colors" />} />
             </Routes>
         </Router>
     );
