@@ -8,7 +8,8 @@
         "Whiskey loves eating popcorn.",
         "Whiskey is a terrible guard dog.",
         "Whiskey wants to cuddle with you!"
-      ]
+      ],
+      "id": 1
     },
     {
       "name": "Duke",
@@ -18,7 +19,8 @@
         "Duke believes that ball is life.",
         "Duke likes snow.",
         "Duke enjoys pawing other dogs."
-      ]
+      ],
+      "id": 2
     },
     {
       "name": "Perry",
@@ -28,21 +30,25 @@
         "Perry loves all humans.",
         "Perry demolishes all snacks.",
         "Perry hates the rain."
-      ]
+      ],
+      "id": 3
     }
   ],
   "colors": [
     {
       "name": "red",
-      "hex": "#FF0000"
+      "hex": "#FF0000",
+      "id": 3
     },
     {
       "name": "green",
-      "hex": "#00FF00"
+      "hex": "#00FF00",
+      "id": 2
     },
     {
       "name": "blue",
-      "hex": "#0000FF"
+      "hex": "#0000FF",
+      "id": 1
     }
   ]
 }
