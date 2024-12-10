@@ -4,11 +4,11 @@ import './ColorList.scss'
 const ColorList = ({colors}) => {
   return (
     <div className='colorlist'>
-      <Link to="new"><button>Add a color</button></Link>
+      <Link to="new"><button className="btn btn-secondary">Add a color</button></Link>
         {colors.map(color => (
             <div key={color.name+color.hex}>
                 <Link to={color.name}>
-                    <h1 style={{color: color.hex}}>{color.name}</h1>
+                    <h1>{color.name}</h1>
                 </Link>
             </div>
         ))}
