@@ -28,7 +28,7 @@ function App() {
         };
 
         const fetchColors = async () => {
-            const res = await axios.get("http://localhost:5001/colors");
+            const res = await axios.get("http://localhost:5001/colors?_sort=id&_order=desc");
             setColors(res.data);
             setLoadingColors(false);
         };
@@ -39,6 +39,7 @@ function App() {
 
     const addColor = async (newColor) => {
         const res = await axios.post("http://localhost:5001/colors", newColor);
+        setColors((prev) => [res.data, ...prev]);
         console.log(res.data);
     };
 
