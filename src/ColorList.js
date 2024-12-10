@@ -4,6 +4,7 @@ import './ColorList.scss'
 const ColorList = ({colors}) => {
   return (
     <div className='colorlist'>
+      <Link to="new"><button>Add a color</button></Link>
         {colors.map(color => (
             <div key={color.name+color.hex}>
                 <Link to={color.name}>

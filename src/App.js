@@ -12,6 +12,7 @@ import DogDetails from "./DogDetails";
 import DogList from "./DogList";
 import ColorList from "./ColorList";
 import ColorDetails from "./ColorDetails.js";
+import NewColorForm from "./NewColorForm";
 
 function App() {
     const [dogs, setDogs] = useState([]);
@@ -54,8 +55,9 @@ function App() {
                     <Route path="*" element={<Navigate to="/dogs" />} />
                 </Route>
                 <Route path="/colors">
-                    <Route index element={<ColorList colors={colors} add={addColor} />} />
+                    <Route index element={<ColorList colors={colors} />} />
                     <Route path=":color" element={<ColorDetails colors={colors} />} />
+                    <Route path="new" element={<NewColorForm add={addColor} />} />
                     <Route path="*" element={<Navigate to="/colors" />} />
                 </Route>
                 <Route path="*" element={<Navigate to="/colors" />} />
